@@ -1,8 +1,9 @@
 import pandas as pd
 
-data_csv = "/content/drive/MyDrive/xaiomics.litrev.wp1/data/PubMed/20201209.pubmed.csv"
-data_bibtex = "/content/drive/MyDrive/xaiomics.litrev.wp1/data/PubMed/pubmed-explainabO-set.txt"
-output = "/content/drive/MyDrive/xaiomics.litrev.wp1/data/PubMed/out.csv"
+#update all three paths
+data_csv = "/content/drive/MyDrive/Path_to_csv.csv"
+data_bibtex = "/content/drive/MyDrive/Path_To_txt/pubmed-xxxx-set.txt"
+output = "/content/drive/MyDrive/PATH/out.csv"
 
 
 df= pd.read_csv(data_csv)
