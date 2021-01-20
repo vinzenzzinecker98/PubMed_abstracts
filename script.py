@@ -2,12 +2,12 @@ import pandas as pd
 
 #update all three paths
 data_csv = "/content/drive/MyDrive/Path_to_csv.csv"
-data_bibtex = "/content/drive/MyDrive/Path_To_txt/pubmed-xxxx-set.txt"
+data_Pubmedtxt = "/content/drive/MyDrive/Path_To_txt/pubmed-xxxx-set.txt"
 output = "/content/drive/MyDrive/PATH/out.csv"
 
 
 df= pd.read_csv(data_csv, sep=",")
-f = open(data_bibtex, "r")
+f = open(data_Pubmedtxt, "r")
 abstractstring = f.read()
 link = {}
 df.dropna(subset=["DOI"])
