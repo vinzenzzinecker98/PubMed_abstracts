@@ -6,7 +6,7 @@ data_bibtex = "/content/drive/MyDrive/Path_To_txt/pubmed-xxxx-set.txt"
 output = "/content/drive/MyDrive/PATH/out.csv"
 
 
-df= pd.read_csv(data_csv)
+df= pd.read_csv(data_csv, sep=",")
 f = open(data_bibtex, "r")
 abstractstring = f.read()
 link = {}
