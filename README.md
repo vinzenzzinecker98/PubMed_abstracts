@@ -1,4 +1,5 @@
-
+#
+Collection of scripts that could help with the organisation of data for structured Literature Reviews.
 
 ## PubMed_abstracts
 
@@ -11,9 +12,10 @@ Output: csv file with appended column for abstracts
 
 ## Scopus Authoraffiliation
 
-Script for generating a better representation of "authoraffiliation" in Scopus Search Exports
-Transforms the String "Authors with affiliations" which is structured
+Script for generating a better representation of "authoraffiliation" in Scopus Search Exports.
 
-`"Author1, ..., Institution1, ..., Country1;Author2, ..., Institution2, ..., Country2"`
+Transforms the string "Authors with affiliations" which is structured
 
-into seperated Columns for Institution und Country, appended for each author
+`"Author1, ..., Institution1, ..., Country1;Author2, ..., Institution2, ..., Country2;..."`
+
+into seperated Columns for each authors Institution und Country, appended for each author of the paper
