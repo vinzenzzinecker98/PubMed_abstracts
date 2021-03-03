@@ -1,0 +1,50 @@
+PATH_INPUT="/content/drive/MyDrive/Scopusaffiliations/20210224.articles.scopus.enhanced-coding.KOPIE.xlsx"
+PATH_OUTPUT="/content/drive/MyDrive/Scopusaffiliations/out.csv"
+
+
+
+
+
+import pandas as pd
+df=pd.read_excel(PATH_INPUT, sheet_name="Articles")
+
+def position(haystack, needle, n):
+    start = haystack.find(needle)
+    while start >= 0 and n > 1:
+        start = haystack.find(needle, start+1)
+        n -= 1
+    return start
+
+#test =["Zheng, K., Department of Computer Science and Software Engineering, Xi'an Jiaotong-Liverpool University, China; Liu, Y., Department of Computer Science and Software Engineering, Xi'an Jiaotong-Liverpool University, China; Dai, C., Department of Computer Science and Software Engineering, Xi'an Jiaotong-Liverpool University, China; Duan, Y., Department of Computer Science and Software Engineering, Xi'an Jiaotong-Liverpool University, China; Huang, X., Department of Computer Science and Software Engineering, Xi'an Jiaotong-Liverpool University, China","Yang, G., Department of Electrical Engineering, Western Norway University of Applied Sciences, Bergen, Norway;Li, C., Department of Informatics, University of Bergen, Bergen, Norway"]
+
+
+counter=0
+all=[]
+for line in df['Authors with affiliations']:
+  #print(counter)
+  faulty=[308, 340,387,493,564,614,615]
+  if counter in faulty:
+    counter=counter+1
+    all.append(["FEHLER"]*(40))
+    continue
+  counter=counter+1
+  
+  affiliations = line.split(sep=";")
+  n_authors=len(affiliations)+1
+  result=[None]*(40)
+  n=0
+  for s in affiliations:
+    #print(s)
+    AuthorInst = s[position(s,",",3)+2:position(s,",",4)]
+    Country=s.split()[-1]
+    result[n]=Country
+    result[n+1]=AuthorInst
+    #print(Country)
+    #print(AuthorInst)
+    n=n+2
+  all.append(result)
+
+dff=pd.DataFrame(all)
+dff.to_csv(PATH_OUTPUT)
+print("done")
+
