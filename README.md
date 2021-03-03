@@ -11,9 +11,9 @@ Output: csv file with appended column for abstracts
 
 ## Scopus Authoraffiliation
 
-script for better representation of "authoraffiliation"
-Transforms the String "Authors with affiliations" which is structured:
+Script for generating a better representation of "authoraffiliation" in Scopus Search Exports
+Transforms the String "Authors with affiliations" which is structured
 
-`"Author1, ..., Institution1", ..., Country1;Author2, ..., Instittion2, ..., "Country21" `
+`"Author1, ..., Institution1, ..., Country1;Author2, ..., Institution2, ..., "Country2"`
 
-into seperated Columns for Institution und Country
+into seperated Columns for Institution und Country, appended for each author
