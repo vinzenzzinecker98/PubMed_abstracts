@@ -9,7 +9,7 @@ Important: The path data_Pubmedtxt must point to your "PubMed-[..]-set.txt", not
 
 Output: csv file with appended column for abstracts
 
-##Scopus Authoraffiliation
+## Scopus Authoraffiliation
 
 script for better representation of "authoraffiliation"
 Transforms the String "Authors with affiliations" which is structured:
